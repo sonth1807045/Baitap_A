@@ -18,7 +18,7 @@ void themSV(int i, SinhVien sinhVien[]) {
             printf("Nhập mã sinh viên thứ %d:", i + 1);
             scanf("%s", sinhVien[i].MaSinhVien);
             if (strlen(sinhVien[i].MaSinhVien) != 5) {
-                printf("Nhập lại %d:", i + 1);
+                printf("Nhập lại mã sinh viên thứ %d\n:", i + 1);
             } else break;
         }
         printf("Nhập tên SV %d:", i + 1);
@@ -80,7 +80,7 @@ int main() {
     printf("5. Thoát chương trình.\n");
 
     while (1) {
-        printf("Lựa chọn của bạn là :");
+        printf("Lựa chọn của bạn là( từ 1-->5 ) :");
         scanf("%d", &choice);
         switch (choice) {
             case 1:
