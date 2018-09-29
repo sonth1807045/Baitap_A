@@ -11,6 +11,7 @@ typedef struct {
 
 void themSV(int i, SinhVien sinhVien[]) {
     char a[10];
+    SinhVien *pointer = sinhVien;
     i = 0;
     for (int count = 0; count < 10; ++count) {
         while (1) {
@@ -26,7 +27,7 @@ void themSV(int i, SinhVien sinhVien[]) {
         printf("Nhập sdt SV %d:", i + 1);
         scanf("%s", sinhVien[i].SoDienThoai);
         i++;
-        printf("Nhập exit để dừng hoặc ấn Enter để tiếp tục.");
+        printf("Nhập exit để chuyển về menu ban đầu hoặc ấn Enter để tiếp tục nhập.");
         fgetc(stdin);
         fgets(a, 10, stdin);
         if (strcmp(a, "exit\n") == 0)break;
@@ -50,9 +51,9 @@ void Luuanhsachvaofile(int i, SinhVien sinhVien[]) {
     fprintf(fp, "-%-20s|%-20s|%s", "Mã sinh viên ", "Tên sinh viên", "Điện thoại");
     for (int count = 0; count < 10; ++count) {
         fprintf(fp, "\n-%-18s|%-18s|%s", sinhVien[i].MaSinhVien, sinhVien[i].TenSinhVien, sinhVien[i].SoDienThoai);
-        fclose(fp);
         i++;
     }
+    fclose(fp);
 }
 
 void Docdanhsachtufile() {
